@@ -1,0 +1,37 @@
+R Bridge Wk2
+Sam CD
+
+November 8, 2015
+
+In probability, “n choose r” means n! / (( n – r)! * r!)
+
+Since the function contains heavy use of factorials, I first create a factorial function:
+
+fac <- function(x)
+{
+  start <- 1
+  vec <- c(2:x)
+  for (i in vec)
+  {
+    start = start * i
+  }
+  return(start)
+}
+I want to check this code first, using a small number:
+
+fac(5)
+## [1] 120
+Success!
+
+Now to create the choose function, and test, knowing that “5 choose 3” evaluates to 10:
+
+cho <- function(n,r)
+{
+  num <- fac(n)
+  den <- (fac(n - r) * fac(r))
+  return(num/den)
+}
+
+cho(5,3)
+## [1] 10
+Success!
