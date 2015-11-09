@@ -1,12 +1,15 @@
-R Bridge Wk2
-Sam CD
-
-November 8, 2015
+---
+title: "R Bridge Wk2"
+author: "Sam CD"
+date: "November 8, 2015"
+output: html_document
+---
 
 In probability, “n choose r” means n! / (( n – r)! * r!)
 
-Since the function contains heavy use of factorials, I first create a factorial function:
-
+Since the function contains heavy use of factorials,
+I first create a factorial function:
+```{r, echo=TRUE}
 fac <- function(x)
 {
   start <- 1
@@ -17,14 +20,19 @@ fac <- function(x)
   }
   return(start)
 }
+```
+
 I want to check this code first, using a small number:
 
+```{r, echo=TRUE}
 fac(5)
-## [1] 120
+```
+
 Success!
 
-Now to create the choose function, and test, knowing that “5 choose 3” evaluates to 10:
-
+Now to create the choose function, and test, knowing that
+“5 choose 3” evaluates to 10:
+```{r.echo=TRUE}
 cho <- function(n,r)
 {
   num <- fac(n)
@@ -33,5 +41,6 @@ cho <- function(n,r)
 }
 
 cho(5,3)
-## [1] 10
+```
+
 Success!
